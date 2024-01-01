@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { CiBookmark } from "react-icons/ci";
+import Todo from '../Todo/Todo';
 const Blog = ({getBlogs, handleAddBookmarks, handleMarkRead, handleRemove}) => {
     const {id, cover, reading_time, author, author_img, hashtags, posted_date, title} = getBlogs;
     return (
@@ -13,6 +14,7 @@ const Blog = ({getBlogs, handleAddBookmarks, handleMarkRead, handleRemove}) => {
                         <p className='text-[#11111199]'>{posted_date}</p>
                     </div>
                 </div>
+                    <Todo give={getBlogs}></Todo>
                 <div>
                     <div className='flex items-center'>
                     <p className='text-[#11111199]'>{reading_time} min read</p>
