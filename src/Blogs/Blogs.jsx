@@ -15,7 +15,7 @@ const Blogs = ({handleAddBookmarks, handleMarkRead, handleRemove}) => {
 
     return (
         <div className="w-2/3">
-            <h3 className="text-2xl">Total Blogs: {blogs.length}</h3>
+            <h3 className="text-lg">Total Blogs: {blogs.length}</h3>
             {
                 blogs.map(soloBlogs => <Blog 
                     key={soloBlogs.id} 

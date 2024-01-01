@@ -18,7 +18,7 @@ const Blog = ({getBlogs, handleAddBookmarks, handleMarkRead, handleRemove}) => {
                     <p className='text-[#11111199]'>{reading_time} min read</p>
                     <button onClick={()=> handleAddBookmarks(getBlogs)} className='text-2xl'><CiBookmark /></button>
                     </div>
-                    <button onClick={()=> handleRemove(id)} className='mt-1'><div className='flex items-center bg-purple-600 rounded-lg py-[6px] px-2 text-white'>Remove <p className='text-xl'><CiBookmark /></p></div></button>
+                    <button onClick={()=> handleRemove(id)} className='mt-2'><div className='flex items-center bg-purple-600 rounded-lg py-[6px] px-3 text-white'>Remove <p className='text-xl'><CiBookmark /></p></div></button>
                 </div>
             </div>
             <h3 className='text-3xl font-bold mb-3'>{title}</h3>
