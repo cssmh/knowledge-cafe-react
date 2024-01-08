@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Bookmark from "../Bookmark/Bookmark";
 const Bookmarks = ({ getBookmarks, myTime }) => {
+  console.log(getBookmarks);
   return (
     <div className="w-1/3">
       <div>
