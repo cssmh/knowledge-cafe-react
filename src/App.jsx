@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
 import Blogs from "./Blogs/Blogs";
 import Bookmarks from "./Bookmarks/Bookmarks";
 import Header from "./Header/Header";
+
+// Prop drilling
+export const YouBeauty = createContext("");
+// Prop drilling ENd
 
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
@@ -25,21 +29,26 @@ function App() {
   // remove bookmark btn
   const handleRemove = (idx) => {
     console.log(idx);
-    const remaining = bookmarks.filter(soloBookmark => soloBookmark.id !== idx);
+    const remaining = bookmarks.filter(
+      (soloBookmark) => soloBookmark.id !== idx
+    );
     setBookmarks(remaining);
   };
   // remove bookmark btn end
   return (
     <>
-      <Header></Header>
-      <div className="flex mt-2 gap-4">
-        <Blogs
-          handleAddBookmarks={handleAddBookmarks}
-          handleMarkRead={handleMarkRead}
-          handleRemove={handleRemove}
-        ></Blogs>
-        <Bookmarks getBookmarks={bookmarks} myTime={time}></Bookmarks>
-      </div>
+    {/* Thats Prop drilling */}
+      <YouBeauty.Provider value="You are Beautiful!!">
+        <Header></Header>
+        <div className="flex mt-2 gap-4">
+          <Blogs
+            handleAddBookmarks={handleAddBookmarks}
+            handleMarkRead={handleMarkRead}
+            handleRemove={handleRemove}
+          ></Blogs>
+          <Bookmarks getBookmarks={bookmarks} myTime={time}></Bookmarks>
+        </div>
+      </YouBeauty.Provider>
     </>
   );
 }
